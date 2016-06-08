@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 col-md-offset-2">
+
+                <h1 class="page-header">
+                    All stories
+                </h1>
+
+                <!-- First Blog Post -->
+                {% for post in posts %}
+                
+                <h2>
+                    <a href="/view/{{ post.id }}">{{ post.title }}</a>
+                </h2>
+                <p class="lead">
+                    by Anonymous
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.publish_date }}</p>
+                <p>
+                	{{ post.story | safe }}
+                </p>
+                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+                {% endfor %}
+                <!-- Pager -->
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+{% endblock %}

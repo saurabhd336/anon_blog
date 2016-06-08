@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8 col-lg-offset-2">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>{{ post.title }}</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by Anonymous
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.publish_date }}</p>
+
+                <hr>
+
+                <!-- Post Content -->
+                <div>
+                	{{ post.story | safe }}
+                </div>
+
+                <hr>
+
+                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+
+                </div>
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+        
+        </div>
+        <!-- /.row -->
+
+        <hr>
+{% endblock %}
